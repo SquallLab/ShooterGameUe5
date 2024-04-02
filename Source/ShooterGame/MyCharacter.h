@@ -8,6 +8,10 @@
 #include "Camera/CameraComponent.h"
 #include "MyCharacter.generated.h"
 
+
+// 전방선언 
+class USkeletalMeshComponent;
+
 UCLASS()
 class SHOOTERGAME_API AMyCharacter : public ACharacter
 {
@@ -47,6 +51,9 @@ private:
 	void Camera(const FInputActionValue& value);
 
 
+
+	UPROPERTY(VisibleDefaultsOnly, Category=Mesh)
+	USkeletalMeshComponent* Mesh1P;
 
 
 };

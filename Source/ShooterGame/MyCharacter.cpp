@@ -19,6 +19,13 @@ AMyCharacter::AMyCharacter()
 	ShooterCameraComponent->SetRelativeLocation(FVector(-10.0f, 0.0f, 60.0f));
 	ShooterCameraComponent->bUsePawnControlRotation = true;
 
+	// 매쉬를 카메라의 자식으로 등록.
+	Mesh1P = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("FirstShooterMesh"));
+	Mesh1P->SetOnlyOwnerSee(true);
+	Mesh1P->SetupAttachment(ShooterCameraComponent);
+	Mesh1P->bCastDynamicShadow = false;
+	Mesh1P->CastShadow = false;
+	Mesh1P->SetRelativeLocation(FVector(-30.0f, 0.0f, -150.0f));
 
 }
 
