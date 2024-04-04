@@ -43,5 +43,9 @@ protected:
 private:
 	AMyCharacter* Character;
 
+public:
+	UPROPERTY(EditDefaultsOnly, Category=MyProjectile)
+	TSubclassOf<class AProjectileBase> ProjectileClass;
+
 
 };

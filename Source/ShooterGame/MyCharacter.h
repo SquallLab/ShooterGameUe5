@@ -55,5 +55,18 @@ private:
 	UPROPERTY(VisibleDefaultsOnly, Category=Mesh)
 	USkeletalMeshComponent* Mesh1P;
 
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MyWeapon")
+	bool bHasRifle;
+
+	UFUNCTION(BlueprintCallable, Category = "MyWeapon")
+	void SetHasRifle(bool bNewHasRifle) { bHasRifle = bNewHasRifle; };
+
+	UFUNCTION(BlueprintCallable, Category = "MyEwapon")
+	bool GetHasRifle() { return bHasRifle; }
+
+	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
+	UCameraComponent* GetFirstPersonCameraComponent()const {return ShooterCameraComponent;	}
+
 
 };
